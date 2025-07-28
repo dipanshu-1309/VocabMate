@@ -95,6 +95,19 @@ section {
   z-index: 4;;
 }
 
+.level-bar {
+  flex: 1;
+  background: var(--color-link-transparent);
+}
+
+.xp{
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--color-link);
+}
+
 /* PORTAL */
 
 /* FOOTER */
