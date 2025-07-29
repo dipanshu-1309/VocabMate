@@ -5,7 +5,7 @@ import Welcome from "./components/layouts/Welcome";
 
 export default function App() {
 
-  const selectedPage = 1// 0: 'welcome', 1: 'dashboard', 2: 'challenge'
+  const selectedPage = 2// 0: 'welcome', 1: 'dashboard', 2: 'challenge'
 
   const pages={
     0: <Welcome />,
