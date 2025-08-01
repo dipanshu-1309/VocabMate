@@ -1,4 +1,4 @@
-export default function Welcome() {
+export default function Welcome( {name, setName, handleCreateAccount}) {
   return (
     <section id="welcome" >
       <h3 className="text-large special-shadow">
@@ -9,8 +9,10 @@ export default function Welcome() {
         <br/> Start your Challenge Today!
       </h6>
       <div>
-        <input type="text"  placeholder="Enter your name..."/>
-        <button>
+        <input value={name} onChange={(e)=>{
+          setName(e.target.value)
+        }} type="text"  placeholder="Enter your name..."/>
+        <button disabled={!name} onClick={handleCreateAccount}>
           <h6>Start &rarr;</h6>
         </button>
       </div>

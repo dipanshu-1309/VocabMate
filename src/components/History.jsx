@@ -1,10 +1,13 @@
-export default function History() {
+export default function History({history}) {
+
+  const historyKeys = Object.keys(history)
+
   return (
     <div className="card history-card">
       <h4>History</h4>
-      <p>
+      {historyKeys.length == 0 && (<p>
         You have no attempts! Press <b>Start</b> to begin ⭐️
-      </p>
+      </p>)}
       <div className="history-list">
         <div className="card-button-secondary">
           <div>
