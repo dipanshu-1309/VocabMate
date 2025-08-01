@@ -46,7 +46,7 @@ export default function App() {
 
   const pages={
     0: <Welcome name={name} setName={setName} handleCreateAccount={handleCreateAccount}/>,
-    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} history={history}/>,
+    1: <Dashboard history={history} name={name} attempts={attempts} PLAN={PLAN} day={day} handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime} />,
     2: <Challenge />
   }
 

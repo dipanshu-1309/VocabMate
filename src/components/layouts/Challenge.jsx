@@ -1,6 +1,13 @@
+import { useState } from "react";
 import ProgressBar from "../ProgressBar";
 
-export default function Challenge() {
+export default function Challenge({day, daysWords, handleChangePage, handleIncrementAttempts, handleCompleteDay, PLAN}) {
+
+  const [wordIndex,setWordIndex] = useState(0)
+  const [inputVa, setInputVal] = useState('')
+  
+
+
   const word = "copacetic";
   const definition = "In excellent order";
 
