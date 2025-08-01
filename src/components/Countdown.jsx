@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { convertMilliseconds, countdownIn24Hours } from "../utils";
 
-export default function Countdown({handleChangePage, daysWords, datetime, day}) {
+export default function Countdown({handleChangePage, daysWords, datetime}) {
 
   const targetMillis = datetime || Date.UTC(2025, 8, 2,12 ,0)
   const [remainingMs, setRemainingMs] = useState(countdownIn24Hours(targetMillis))  
   const timer = convertMilliseconds(remainingMs)
+
+  useEffect(() => {
+        const interval = setInterval(() => {
+            setRemainingMs(countdownIn24Hours(targetMillis))
+        }, 1000)
+        return () => clearInterval(interval)
+    }, [targetMillis])
 
   return (
     <div className="card countdown-card">
@@ -13,7 +20,7 @@ export default function Countdown({handleChangePage, daysWords, datetime, day}) 
       <div className="today-container">
         <div>
           <p>Time remaining</p>
-          <h3>{datetime ? `${Math.abs(timer.hours)}H ${Math.abs(timer.minutes)}M ${Math.abs(timer.seconds)}` : '23H 59M 60S'}</h3>
+          <h3>{datetime ? `${Math.abs(timer.hours)}H ${Math.abs(timer.minutes)}M ${Math.abs(timer.seconds)}S` : '23H 59M 60S'}</h3>
         </div>
         <div>
           <p>Words for today</p>
